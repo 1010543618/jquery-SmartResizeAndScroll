@@ -1,8 +1,10 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-	typeof define === 'function' && define.amd ? define(['exports'], factory) :
-	(factory((global.$ = global.$ || {}, global.$.fn = global.$.fn || {})));
-}(this, (function (exports) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('jquery')) :
+	typeof define === 'function' && define.amd ? define(['exports', 'jquery'], factory) :
+	(factory((global.$ = global.$ || {}, global.$.fn = global.$.fn || {}),global.$));
+}(this, (function (exports,jquery) { 'use strict';
+
+jquery = jquery && jquery.hasOwnProperty('default') ? jquery['default'] : jquery;
 
 // 参考了（reference）：
 // debouncing function from John Hann
@@ -47,8 +49,6 @@ function smartresize(fn, threshold){
 function smartscroll(fn, threshold){
   return fn ? this.bind('scroll', debounce(fn, threshold)) : this.trigger('smartscroll'); 
 }
-
-// import $ from "jquery";
 
 exports.smartresize = smartresize;
 exports.smartscroll = smartscroll;
