@@ -1,0 +1,26 @@
+{
+  "name": "jquery-smartresizeandscroll",
+  "version": "1.0.0",
+  "description": "Let jquery's resize and scroll function run one time per timeout.(I find this method in puikinsh/gentelella https://github.com/puikinsh/gentelella, and fell it useful.)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1010543618/jquery-SmartResizeAndScroll.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/1010543618/jquery-SmartResizeAndScroll/issues"
+  },
+  "homepage": "https://github.com/1010543618/jquery-SmartResizeAndScroll#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "rollup": "^0.56.2"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
