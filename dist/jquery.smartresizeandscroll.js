@@ -43,15 +43,29 @@ function debounce (func, threshold) {
 }
 
 function smartresize(fn, threshold){
-  return fn ? this.bind('resize', debounce(fn, threshold)) : this.trigger('smartresize'); 
+  return fn ? 
+    this.bind('resize', this.sras_resize = debounce(fn, threshold)) : 
+    this.trigger('smartresize');
 }
 
 function smartscroll(fn, threshold){
-  return fn ? this.bind('scroll', debounce(fn, threshold)) : this.trigger('smartscroll'); 
+  return fn ? 
+    this.bind('scroll', this.sras_scroll = debounce(fn, threshold)) : 
+    this.trigger('smartscroll'); 
+}
+
+function clearSmartresize(){
+  return this.unbind('resize', this.sras_resize);
+}
+
+function clearSmartscroll(){
+  return this.unbind('scroll', this.sras_scroll);
 }
 
 exports.smartresize = smartresize;
 exports.smartscroll = smartscroll;
+exports.clearSmartresize = clearSmartresize;
+exports.clearSmartscroll = clearSmartscroll;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 

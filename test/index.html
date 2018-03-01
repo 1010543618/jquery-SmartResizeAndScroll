@@ -8,14 +8,21 @@
   </head>
 <body>
   <div style="height: 3000px"></div>
-  <div id="msg" style="position: fixed;top: 0;left: 0">改变页面大小或滚动滚动条试试<br></div>
+  <div id="msg" style="position: fixed;top: 0;left: 0">
+    改变页面大小或滚动滚动条试试
+    <br>
+    <button onclick="smartresize.clearSmartresize()">清除smartresize</button>
+    <button onclick="smartresize.clearSmartscroll()">清除smartscroll</button>
+    <br>
+  </div>
   <script>
-    $(window).smartresize(function(){
+    smartresize = $(window).smartresize(function(){
       document.querySelector('#msg').innerHTML += 'smartresize<br>';
     });
-    $(window).smartscroll(function(){
+    smartscroll = $(window).smartscroll(function(){
       document.querySelector('#msg').innerHTML += 'smartscroll<br>';
     });
+    console.log(smartresize, smartscroll)
   </script>
 </body>
 </html>
